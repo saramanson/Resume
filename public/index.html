@@ -1,0 +1,95 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>AI Resume Builder</title>
+    <link rel="stylesheet" href="/styles.css">
+  </head>
+  <body>
+    <main class="app-shell">
+      <section class="workbench" aria-label="Resume tailoring workbench">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">AI Resume Builder</p>
+            <h1>Tailor your resume to the job description.</h1>
+          </div>
+          <div class="status-card" aria-live="polite">
+            <span class="status-dot"></span>
+            <span id="engineStatus">Local tailoring ready</span>
+          </div>
+        </header>
+
+        <section class="input-grid">
+          <div class="panel input-panel">
+            <div class="panel-heading">
+              <div>
+                <h2>Job Description</h2>
+                <p>Paste the exact role you are applying for.</p>
+              </div>
+              <button class="ghost-button" id="sampleJob" type="button">Sample</button>
+            </div>
+            <textarea id="jobDescription" spellcheck="true" placeholder="Paste job title, responsibilities, requirements, skills, and preferred qualifications..."></textarea>
+          </div>
+
+          <div class="panel input-panel">
+            <div class="panel-heading">
+              <div>
+                <h2>Current Profile</h2>
+                <p>Paste your existing resume, LinkedIn summary, or career notes.</p>
+              </div>
+              <button class="ghost-button" id="sampleProfile" type="button">Sample</button>
+            </div>
+            <textarea id="profile" spellcheck="true" placeholder="Paste your current resume/profile here..."></textarea>
+          </div>
+        </section>
+
+        <section class="action-row">
+          <button class="primary-button" id="generateButton" type="button">
+            <span class="button-icon">AI</span>
+            Build tailored resume
+          </button>
+          <button class="secondary-button" id="clearButton" type="button">Clear</button>
+          <p id="formMessage" role="status"></p>
+        </section>
+
+        <section class="output-layout">
+          <aside class="insights" aria-label="Resume insights">
+            <div class="score-ring" id="scoreRing" style="--score: 0">
+              <span id="scoreValue">--</span>
+              <small>ATS match</small>
+            </div>
+            <div class="insight-block">
+              <h2>Target Role</h2>
+              <p id="targetRole">Waiting for input</p>
+            </div>
+            <div class="insight-block">
+              <h2>Matched Keywords</h2>
+              <div class="chip-list" id="matchedKeywords"></div>
+            </div>
+            <div class="insight-block">
+              <h2>Verify Before Adding</h2>
+              <div class="chip-list muted" id="missingKeywords"></div>
+            </div>
+          </aside>
+
+          <section class="resume-panel" aria-label="Generated resume">
+            <div class="resume-toolbar">
+              <div>
+                <h2>Updated Resume</h2>
+                <p id="resumeMeta">Your tailored resume will appear here.</p>
+              </div>
+              <div class="toolbar-actions">
+                <button class="icon-button" id="copyButton" type="button" title="Copy resume">Copy</button>
+                <button class="icon-button" id="downloadButton" type="button" title="Download resume">TXT</button>
+                <button class="icon-button" id="printButton" type="button" title="Print resume">Print</button>
+              </div>
+            </div>
+            <pre id="resumeOutput" class="resume-output">Paste a job description and your current profile, then build a tailored resume.</pre>
+          </section>
+        </section>
+      </section>
+    </main>
+    <script src="/app.js" type="module"></script>
+  </body>
+</html>
