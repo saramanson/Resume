@@ -1,0 +1,8 @@
+.netlify
+node_modules
+.npm-cache
+*.log
+deploy-stage-*
+deploy-resume-builder-*.zip
+freekit-resume-builder-*.zip
+.git
