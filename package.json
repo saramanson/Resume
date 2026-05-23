@@ -1,0 +1,13 @@
+{
+  "name": "ai-resume-builder",
+  "version": "1.0.0",
+  "description": "Full-stack AI resume builder that tailors a current profile to a job description.",
+  "main": "server.js",
+  "type": "module",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
